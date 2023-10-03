@@ -12,8 +12,9 @@ other = []
 #define extension types
 doc = ('.doc', '.docx', '.txt', '.pdf')
 pic = ('.img', '.jpg', ".jpeg", ".png")
-vid = ('mkv', 'mp4', 'webm', 'mov', 'avi', 'm4v')
-aud = ('mp3', 'wav', 'flac')
+aud = ('.mp3', '.wav', '.flac')
+vid = ('.mkv', '.mp4', '.webm', '.mov', '.avi', '.m4v')
+apps = ('.exe')
 
 # Get the download path file of the user
 downloads_path = str(Path.home() / "Downloads")
@@ -25,7 +26,15 @@ downloads_path = str(Path.home() / "Downloads")
 list = os.listdir(downloads_path)
 
 #Print out the current list of files in the download directory
-print(list)
+# print(list)
+
+# write a function to append files that end with doc extenion to the documents list
+def documentsAppend():
+    for files in list:
+        if files.endswith(doc):
+            docFiles = files
+            documents.append(docFiles)
+    print(len(documents))
 
 # write a function to append files that end with pic extenion to the pictures list
 def picturesAppend():
@@ -43,17 +52,26 @@ def videosAppend():
             videos.append(vidFiles)
     print(len(videos))
 
-# write a function to append files that end with doc extenion to the documents list
-def documentsAppend():
+# write a function to append files that end with aud extenion to the music list
+def musicAppend():
     for files in list:
-        if files.endswith(doc):
-            docFiles = files
-            documents.append(docFiles)
-    print(len(documents))
-
+        if files.endswith(aud):
+            audFiles = files
+            music.append(audFiles)
+    print(len(music))
             
+# write a function to append files that end with apps extenion to the application list
+def applicationsAppend():
+    for files in list:
+        if files.endswith(apps):
+            appFiles = files
+            applications.append(appFiles)
+    print(len(applications))
 
-picturesAppend()
-videosAppend()
 documentsAppend()
+picturesAppend()
+musicAppend()
+videosAppend()
+applicationsAppend()
+
          
