@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import shutil
 
 # Empty Arrays that will be used to push files into
 documents = []
@@ -25,24 +26,20 @@ videos_path = str(Path.home() / "Videos")
 
 # Need to create a new folder for applications in the user folder and that is what will hold the users applications
 
-
-
-# Ensure that the download path is pointing to the right place
-# print(downloads_path)
-
 # Assign the files of the directory to a variable
 list = os.listdir(downloads_path)
 
 #Print out the current list of files in the download directory
-# print(list)
+print(list)
 
 # write a function to append files that end with doc extenion to the documents list
 def documentsAppend():
     for files in list:
         if files.endswith(doc):
-            docFiles = files
-            documents.append(docFiles)
-    print(len(documents))
+            documentFinal = os.path.join(downloads_path, files)
+            shutil.move(documentFinal, documents_path)
+            #Create a txt file in downloads folder that will hold the file names for files moved to new folder
+    print("Files have been moved to Documents Folder")
 
 # write a function to append files that end with pic extenion to the pictures list
 def picturesAppend():
