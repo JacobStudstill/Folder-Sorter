@@ -10,14 +10,22 @@ applications = []
 other = []
 
 #define extension types
-doc = ('.doc', '.docx', '.txt', '.pdf')
+doc = ('.doc', '.docx', '.txt', '.pdf','.txt', 'ppt')
 pic = ('.img', '.jpg', ".jpeg", ".png")
 aud = ('.mp3', '.wav', '.flac')
-vid = ('.mkv', '.mp4', '.webm', '.mov', '.avi', '.m4v')
-apps = ('.exe')
+vid = ('.mkv', '.mp4', '.webm', '.mov', '.avi', '.m4v','.gif')
+apps = ('.exe','msi', '.cap')
 
-# Get the download path file of the user
+# Get the default file paths of the user
 downloads_path = str(Path.home() / "Downloads")
+documents_path = str(Path.home() / "Documents")
+pictures_path = str(Path.home() / "Pictures")
+music_path = str(Path.home() / "Music")
+videos_path = str(Path.home() / "Videos")
+
+# Need to create a new folder for applications in the user folder and that is what will hold the users applications
+
+
 
 # Ensure that the download path is pointing to the right place
 # print(downloads_path)
