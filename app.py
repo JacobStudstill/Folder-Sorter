@@ -12,7 +12,7 @@ other = []
 
 #define extension types
 doc = ('.doc', '.docx', '.txt', '.pdf','.txt', 'ppt')
-pic = ('.img', '.jpg', ".jpeg", ".png")
+pic = ('.img', '.jpg', '.jpeg', '.png','webp')
 aud = ('.mp3', '.wav', '.flac')
 vid = ('.mkv', '.mp4', '.webm', '.mov', '.avi', '.m4v','.gif')
 apps = ('.exe','msi', '.cap')
@@ -29,9 +29,6 @@ videos_path = str(Path.home() / "Videos")
 # Assign the files of the directory to a variable
 list = os.listdir(downloads_path)
 
-#Print out the current list of files in the download directory
-print(list)
-
 # write a function to append files that end with doc extenion to the documents list
 def documentsAppend():
     for files in list:
@@ -39,31 +36,31 @@ def documentsAppend():
             documentFinal = os.path.join(downloads_path, files)
             shutil.move(documentFinal, documents_path)
             #Create a txt file in downloads folder that will hold the file names for files moved to new folder
-    print("Files have been moved to Documents Folder")
+    print("Documents have been moved to Documents Folder")
 
 # write a function to append files that end with pic extenion to the pictures list
 def picturesAppend():
     for files in list:
         if files.endswith(pic):
-            picFiles = files
-            pictures.append(picFiles)
-    print(len(pictures))
+           picFinal = os.path.join(downloads_path, files)
+           shutil.move(picFinal, pictures_path)
+    print("Pictures have been moved to Documents Folder")
 
 # write a function to append files that end with pic extenion to the videos list
 def videosAppend():
     for files in list:
         if files.endswith(vid):
-            vidFiles = files
-            videos.append(vidFiles)
-    print(len(videos))
+            vidFinal = os.path.join(downloads_path, files)
+            shutil.move(vidFinal, videos_path)
+    print("Videos have been moved to Videos Folder")
 
 # write a function to append files that end with aud extenion to the music list
 def musicAppend():
     for files in list:
         if files.endswith(aud):
-            audFiles = files
-            music.append(audFiles)
-    print(len(music))
+            audFinal = os.path.join(downloads_path, files)
+            shutil.move(audFinal, music_path)
+    print("Music have been moved to Music Folder")
             
 # write a function to append files that end with apps extenion to the application list
 def applicationsAppend():
