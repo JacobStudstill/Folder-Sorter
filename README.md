@@ -1,4 +1,31 @@
-# Folder-Sorter
-The purpose of this project will be to create and run a script that will sort through a download folder and assign every file into a corresponding folder based on the file extension.
+# Folder Sorter
 
-## Testing
+## Table of Contents
+
+* [Motivation](#Motivation)
+
+* [Demonstration](#Demonstration)
+
+* [Languages](#Languages)
+
+* [Usage](#Usage)
+
+* [Link](#Link)
+
+
+## Motivation
+
+My motivation for this project was to create an application that will act like the back end API for a social network.
+
+## Demonstration
+
+
+
+
+
+## Languages
+
+The language used for this project was Python. The libraries that were used were OS, Shutil, and pathlib
+
+## Usage
+
