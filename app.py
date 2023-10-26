@@ -16,6 +16,7 @@ pic = ('.img', '.jpg', '.jpeg', '.png','webp')
 aud = ('.mp3', '.wav', '.flac')
 vid = ('.mkv', '.mp4', '.webm', '.mov', '.avi', '.m4v','.gif')
 apps = ('.exe','msi', '.cap')
+coding = ()
 
 # Get the default file paths of the user
 parent_path = str(Path.home())
@@ -26,11 +27,33 @@ music_path = str(Path.home() / "Music")
 videos_path = str(Path.home() / "Videos")
 
 
+
 # Need to create a new folder for applications in the user folder and that is what will hold the users applications
 
 
 # Assign the files of the directory to a variable
 list = os.listdir(downloads_path)
+
+# ask user if they want to add a folder for coding files
+def codingFile():
+    answer = input("Would you like to add a folder for coding files? ")
+    answer.lower()
+    match answer:
+        case "yes":
+            folder_name = input ("What do you want your folder to be named?")
+            print("A folder will be created for your program files")
+            coding_path = os.path.join(parent_path, folder_name)
+            os.mkdir(coding_path)
+            for files in list:
+                if files.endswith(coding):
+                    codingFinal = os.path.join(coding_path, files)
+                    shutil.move(codingFinal, coding_path)
+
+        case "no":
+            print("A folder will not be created for your program files")
+        case _:
+            print("Invalid answer, please try again")
+            codingFile()
 
 # write a function to append files that end with doc extenion to the documents list
 def documentsAppend():
@@ -71,24 +94,8 @@ def applicationsAppend():
         if files.endswith(apps):
             appFiles = files
             applications.append(appFiles)
-    print(len(applications))
 
-# ask user if they want to add a folder for coding files
-def codingFile():
-    answer = input("Would you like to add a folder for coding files? ")
-    answer.lower()
-    match answer:
-        case "yes":
-            folder_name = input ("What do you want your folder to be named?")
-            print("A folder will be created for your program files")
-            path = os.path.join(parent_path, folder_name)
-            os.mkdir(path) 
-
-        case "no":
-            print("A folder will not be created for your program files")
-        case _:
-            print("Invalid answer, please try again")
-            codingFile()
+            
 
 #call the functions
 codingFile()
