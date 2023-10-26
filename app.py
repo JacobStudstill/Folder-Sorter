@@ -18,6 +18,7 @@ vid = ('.mkv', '.mp4', '.webm', '.mov', '.avi', '.m4v','.gif')
 apps = ('.exe','msi', '.cap')
 
 # Get the default file paths of the user
+parent_path = str(Path.home())
 downloads_path = str(Path.home() / "Downloads")
 documents_path = str(Path.home() / "Documents")
 pictures_path = str(Path.home() / "Pictures")
@@ -70,10 +71,24 @@ def applicationsAppend():
             applications.append(appFiles)
     print(len(applications))
 
+# ask user if they want to add a folder for coding files
+def codingFile():
+    answer = input("Would you like to add a folder for coding files? ")
+    answer.lower()
+    match answer:
+        case "yes":
+            folder_name = input ("What do you want your folder to be named?")
+            print("A folder will be created for your program files")
+
+        case "no":
+            print("A folder will not be created for your program files")
+        case _:
+            print("Invalid answer, please try again")
+            codingFile()
+
+codingFile()
 documentsAppend()
 picturesAppend()
 musicAppend()
 videosAppend()
 applicationsAppend()
-
-         
