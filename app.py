@@ -25,6 +25,7 @@ pictures_path = str(Path.home() / "Pictures")
 music_path = str(Path.home() / "Music")
 videos_path = str(Path.home() / "Videos")
 
+
 # Need to create a new folder for applications in the user folder and that is what will hold the users applications
 
 
@@ -80,6 +81,8 @@ def codingFile():
         case "yes":
             folder_name = input ("What do you want your folder to be named?")
             print("A folder will be created for your program files")
+            path = os.path.join(parent_path, folder_name)
+            os.mkdir(path) 
 
         case "no":
             print("A folder will not be created for your program files")
