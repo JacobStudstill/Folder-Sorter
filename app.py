@@ -40,7 +40,7 @@ def codingFile():
     answer.lower()
     match answer:
         case "yes":
-            folder_name = input ("What do you want your folder to be named?")
+            folder_name = input ("What do you want your folder to be named? Yes or no?")
             print("A folder will be created for your program files")
             coding_path = os.path.join(parent_path, folder_name)
             os.mkdir(coding_path)
