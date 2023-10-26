@@ -27,6 +27,7 @@ videos_path = str(Path.home() / "Videos")
 
 # Need to create a new folder for applications in the user folder and that is what will hold the users applications
 
+
 # Assign the files of the directory to a variable
 list = os.listdir(downloads_path)
 
@@ -86,6 +87,7 @@ def codingFile():
             print("Invalid answer, please try again")
             codingFile()
 
+#call the functions
 codingFile()
 documentsAppend()
 picturesAppend()
