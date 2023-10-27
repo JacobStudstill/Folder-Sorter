@@ -25,11 +25,13 @@ documents_path = str(Path.home() / "Documents")
 pictures_path = str(Path.home() / "Pictures")
 music_path = str(Path.home() / "Music")
 videos_path = str(Path.home() / "Videos")
+application_name = "application"
 
 
 
 # Need to create a new folder for applications in the user folder and that is what will hold the users applications
-
+applications_path = os.path.join(parent_path, application_name)
+os.mkdir(application_path)
 
 # Assign the files of the directory to a variable
 list = os.listdir(downloads_path)
