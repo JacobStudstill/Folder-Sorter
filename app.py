@@ -72,7 +72,7 @@ def picturesAppend():
         if files.endswith(pic):
            picFinal = os.path.join(downloads_path, files)
            shutil.move(picFinal, pictures_path)
-    print("Pictures have been moved to Documents Folder")
+    print("Pictures have been moved to Pictures Folder")
 
 # write a function to append files that end with pic extenion to the videos list
 def videosAppend():
