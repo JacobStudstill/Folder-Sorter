@@ -38,12 +38,12 @@ list = os.listdir(downloads_path)
 
 # ask user if they want to add a folder for coding files
 def codingFile():
-    answer = input("Would you like to add a folder for coding files? ")
+    answer = input("Would you like to add a folder for coding files? Yes or No?")
     answer.lower()
     match answer:
         case "yes":
-            folder_name = input ("What do you want your folder to be named? Yes or no?")
-            print("A folder will be created for your program files")
+            folder_name = input ("What do you want your folder to be named?")
+            print("A folder named",folder_name, "will be created for your coding files")
             coding_path = os.path.join(parent_path, folder_name)
             os.mkdir(coding_path)
             for files in list:
