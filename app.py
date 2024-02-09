@@ -31,7 +31,7 @@ application_name = "application"
 
 # Need to create a new folder for applications in the user folder and that is what will hold the users applications
 applications_path = os.path.join(parent_path, application_name)
-os.mkdir(application_path)
+os.mkdir(applications_path)
 
 # Assign the files of the directory to a variable
 list = os.listdir(downloads_path)
